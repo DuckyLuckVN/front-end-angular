@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="resources/css/fonts.css">
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/fontawesome-5.9.2/css/all.css">
+    <link rel="stylesheet" href="resources/css/dinhdang.css">
+    <link rel="stylesheet" href="resources/css/animate.min.css">
+    
+    <script src="resources/js/jquery.min.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
+    <script src="resources/js/popper.min.js"></script>
+    <script src="resources/js/angular.min.js"></script>
+    <script src="resources/js/angular-route.js"></script>
+
+  </head>
+<body>
+    <!-- ** header ** -->
+    <div class="header-photo">
+        <img class="wallpaper" src="resources/img/wallpaper-01.jpg">
+        <img class="logo" src="resources/img/h-logo.png">
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <a class="navbar-brand" href="index.html">
+              <i class="fas fa-graduation-cap"></i> HERO STUDY ONLINE
+              </a>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Trang Chủ<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="courses.html">Các Khóa Học</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="introduction.html" tabindex="-1" aria-disabled="true">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html" tabindex="-1" aria-disabled="true">Liên Hệ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faq.html" tabindex="-1" aria-disabled="true">Hỏi Đáp</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <span class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Tài khoản
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="profile-detail.html">Thông tin chi tiết</a>
+                      <a class="dropdown-item" href="change-profile.html">Đổi thông tin</a>
+                      <a class="dropdown-item" href="change-password.html">Đổi mật khẩu</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="logout.html">Đăng xuất</a>
+                    </div>
+                </span>
+          </form>
+        </div>
+      </nav>
+    <!-- ** header end ** -->
+    <div class="container-fluid">
+      <div class="row">
+          <aside class="col-lg-3 col-md-4 col-sm-12 pl-0">
+              <div class="card  mt-3">
+                  <div class="card-header">
+                    Danh mục môn học
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Kiểm thử và triển khai</li>
+                    <li class="list-group-item">SQL Server</li>
+                    <li class="list-group-item">Điện toán đám mây</li>
+                    <li class="list-group-item">Lập trình PHP</li>
+                    <li class="list-group-item">Lập trình Android cơ bản</li>
+                    <li class="list-group-item">Lập trình Android nâng cao</li>
+                    <li class="list-group-item">Thiết kế layout</li>
+                    <li class="list-group-item">Quản lý dự án với Agle</li>
+                  </ul>
+                </div>
+  
+                <div class="card mt-3">
+                    <div class="card-header">
+                      Thông tin liên hệ
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Facebook</li>
+                      <li class="list-group-item">Gmail</li>
+                      <li class="list-group-item">Zalo</li>
+                      <li class="list-group-item">Skype</li>
+                    </ul>
+                  </div>
+                
+          </aside>
+          <!-- <div class="col-lg-3 col-md-4 col-sm-12 pl-0 menu-left">
+              <div class="menu-title">
+                Danh mục môn học
+              </div>
+              <ul class="">
+                <li class="">Kiểm thử và triển khai</li>
+                <li class="">SQL Server</li>
+                <li class="">Điện toán đám mây</li>
+                <li class="">Lập trình PHP</li>
+                <li class="">Lập trình Android cơ bản</li>
+                <li class="">Lập trình Android nâng cao</li>
+                <li class="">Thiết kế layout</li>
+                <li class="">Quản lý dự án với Agle</li>
+              </ul>
+          </div> -->
+          <!-- NỘI DUNG WEBSITE -->
+        <div class="col-lg-9 col-md-8 col-sm-12">
+            <div class="container">
+                <!-- <img src="resources/img/wallpaper-02.jpg" style="width: 100%;"> -->
+                <div class="card card-flip card-primary">
+                  <div class="card-front">
+                      <div class="card-body text-center">
+                          <img src="assets/images/subjects/ADAV.png" class="img-fluid" alt="Card image cap">
+                          <h5 class="card-title text-primary ng-binding">Lập trình Android nâng cao</h5>
+                      </div>
+                  </div>
+                  <div class="card-back">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col-lg-12 text-center">
+                                  <img width="50px" src="assets/images/subjects.png" class="border border-primary rounded mb-1 img-fluid">
+                                  <p class="card-title text-primary ng-binding">Lập trình Android nâng cao</p>
+                                  <p class="card-text ng-binding">Mã môn: ADAV</p>
+                                  <p class="card-text ng-binding">Số người học: 200445</p>
+                                  <a href="javascript:void();" class="btn btn-primary m-1"><i class="fa fa-star mr-1" aria-hidden="true"></i> Tham gia</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+</body>
+</html>
