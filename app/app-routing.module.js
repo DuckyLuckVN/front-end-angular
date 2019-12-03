@@ -13,6 +13,7 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
         { name: 'faq', url: '/faq', component: 'faq' },
         { name: 'register', url: '/register', component: 'register' },
         { name: 'login', url: '/login', component: 'login' },
+        { name: 'change-password', url: '/change-password', component: 'changePassword' },
     ];
 
     routes.forEach(route => $stateProvider.state(route));
