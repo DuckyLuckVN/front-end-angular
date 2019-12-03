@@ -1,0 +1,50 @@
+<div class="header-photo">
+    <img class="wallpaper" src="./resources/img/wallpaper-01.jpg">
+    <img class="logo" src="./resources/img/h-logo.png">
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <a class="navbar-brand" href="index.html">
+          <i class="fas fa-graduation-cap"></i> {{$.title}}
+          </a>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li ng-repeat="item in $.menu" class="nav-item">
+          <a class="nav-link" ui-sref="{{item.href}}" ui-sref-active="active">{{item.title}}<span class="sr-only">(current)</span></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="courses.html">Các Khóa Học</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="introduction.html" tabindex="-1" aria-disabled="true">Giới thiệu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html" tabindex="-1" aria-disabled="true">Liên Hệ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="faq.html" tabindex="-1" aria-disabled="true">Hỏi Đáp</a>
+        </li> -->
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+          <span class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle pr-3" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Tài khoản
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="profile-detail.html">Thông tin chi tiết</a>
+                  <a class="dropdown-item" href="change-profile.html">Đổi thông tin</a>
+                  <a class="dropdown-item" href="change-password.html">Đổi mật khẩu</a>
+                  <div class="dropdown-divider"></div> 
+                  <a class="dropdown-item" ui-sref="login">Đăng nhập</a>
+                  <a class="dropdown-item" ui-sref="register">Đăng Ký</a>
+                  <div class="dropdown-divider"></div> 
+                  <a class="dropdown-item" href="logout.html">Đăng xuất</a>
+                </div>
+            </span>
+      </form>
+    </div>
+  </nav>

@@ -66,11 +66,12 @@
         position: absolute;
         background: #8BC34A;
         bottom: -9px;
-        left: 55%;
+        left: 50%;
         height: 24px;
         width: 24px;
         transform: rotate(45deg);
         z-index: -3;
+        transition: .3s;
     } */
 
 }
@@ -186,6 +187,16 @@ footer > .footer-center
 
 }
 
-aside {
+aside-menu, aside {
     border-right: 3px solid #ECECEC;
 }
+
+.zoom {
+    transition: transform .2s; /* Animation */
+  }
+  
+  .zoom:hover {
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    border-radius: 12px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
