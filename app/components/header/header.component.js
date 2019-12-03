@@ -19,7 +19,7 @@ function controller($location) {
             href: "courses",
         },
         {
-            title: "Giới Thiệu",
+            title: "Giới Thiệu a",
             href: "introduction",
         },
         {
