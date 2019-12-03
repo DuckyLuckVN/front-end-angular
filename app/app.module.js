@@ -9,6 +9,7 @@ import {faq} from './components/faq/faq.component.js';
 import {faqItem} from './components/faq/faq-item/faq-item.component.js';
 import {contact} from './components/contact/contact.component.js';
 import {register} from './components/register/register.component.js';
+import {login} from './components/login/login.component.js';
 
 export var app = angular.module('main', 
 [
@@ -20,6 +21,7 @@ app.component("headerNav", header);
 app.component("asideMenu", aside);
 
 app.component("register", register);
+app.component("login", login);
 
 app.component("appRoot", appRoot);
 app.component("home", home);

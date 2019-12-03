@@ -12,30 +12,7 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
         { name: 'contact', url: '/contact', component: 'contact' },
         { name: 'faq', url: '/faq', component: 'faq' },
         { name: 'register', url: '/register', component: 'register' },
-        // {
-        //     name: 'khoa-hoc',
-        //     url: '/khoa-hoc',
-        //     component: 'appKhoaHoc',
-        //     resolve: {
-        //         subjects: subjectService => subjectService.getAll()
-        //     }
-        // },
-        // {
-        //     name: 'xac-thuc',
-        //     url: '/xac-thuc',
-        //     component: 'appXacThuc'
-        // },
-        //     {
-        //         name: 'xac-thuc.dang-nhap',
-        //         url: '/dang-nhap',
-        //         component: 'appDangNhap',
-        //     },
-        //     {
-        //         name: 'xac-thuc.quen-mat-khau',
-        //         url: '/quen-mat-khau',
-        //         component: 'appQuenMatKhau',
-        //     },
-        
+        { name: 'login', url: '/login', component: 'login' },
     ];
 
     routes.forEach(route => $stateProvider.state(route));

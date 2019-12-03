@@ -200,3 +200,12 @@ aside-menu, aside {
     border-radius: 12px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   }
+
+.card-auth .card-body label {
+    font-weight: bold;
+}
+
+.card-auth .card-body [name="btnRegister"] {
+    height: 50px;
+    font-weight: bold;
+}
