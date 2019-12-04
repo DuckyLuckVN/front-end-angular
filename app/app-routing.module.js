@@ -14,6 +14,7 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
         { name: 'register', url: '/register', component: 'register' },
         { name: 'login', url: '/login', component: 'login' },
         { name: 'change-password', url: '/change-password', component: 'changePassword' },
+        { name: 'change-profile', url: '/change-profile', component: 'changeProfile' },
     ];
 
     routes.forEach(route => $stateProvider.state(route));

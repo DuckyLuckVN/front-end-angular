@@ -11,6 +11,7 @@ import {contact} from './components/contact/contact.component.js';
 import {register} from './components/register/register.component.js';
 import {login} from './components/login/login.component.js';
 import {changePassword} from './components/change-password/change-password.component.js';
+import {changeProfile} from './components/change-profile/change-profile.component.js';
 
 
 export var app = angular.module('main', 
@@ -25,6 +26,7 @@ app.component("asideMenu", aside);
 app.component("register", register);
 app.component("login", login);
 app.component("changePassword", changePassword);
+app.component("changeProfile", changeProfile);
 
 app.component("appRoot", appRoot);
 app.component("home", home);
