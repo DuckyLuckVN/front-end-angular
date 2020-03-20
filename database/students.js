@@ -1,8 +1,8 @@
-﻿{
-    "students": [
+﻿
+export let students = [
         {
             "username": "thongddps08464",
-            "password": "123",
+            "password": "123456",
             "fullName": "Đinh Đạt Thông",
             "email": "thongddps08464@fpt.edu.vn",
             "gender": true,
@@ -22,10 +22,10 @@
         },
         {
             "username": "haondps07264",
-            "password": "123",
+            "password": "123456",
             "fullName": "Nguyễn Đại Hào",
             "email": "haondps07264@fpt.edu.vn",
-            "gender": false,
+            "gender": true,
             "birthday": "1999-09-09",
             "schoolFee": 2000000,
             "marks": 0
@@ -41,4 +41,3 @@
             "marks": 0
         }
     ]
-}

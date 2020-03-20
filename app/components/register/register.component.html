@@ -10,76 +10,125 @@
                 ĐĂNG KÝ TÀI KHOẢN
             </div>
             <div class="card-body">
-                <!-- Tài khoản -->
-                <div class="form-group row">
-                    <label class="col-sm-12 col-md-4 col-form-label">Tài khoản</label>
-                    <div class="col-sm-12 col-md-8">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-alt"></i></span>
+                <form name="formRegister" ng-submit="$.register()">
+                    <!-- Tài khoản -->
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-md-4 col-form-label">Tài khoản</label>
+                        <div class="col-sm-12 col-md-8">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
+                                </div>
+                                <input type="text" class="form-control" name="username" ng-model="$.student.username" required
+                                    minlength="6" pattern="^[a-zA-Z0-9\s]{1,}$">
                             </div>
-                            <input type="text" class="form-control" placeholder="">
+                            <span class="text-danger" ng-model="$.student.username" ng-messages="formRegister.username.$error" ng-show="formRegister.username.$dirty">
+                                <span ng-message="required">Vui lòng nhập tài khoản</span>
+                                <span ng-message="pattern">Tài khoản chứa ký tự không hợp lệ</span>
+                                <span ng-message="minlength">Tài khoản có độ dài quá ngắn</span>
+                            </span>
                         </div>
                     </div>
-                </div>
+                    
+                    <!-- Email -->
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-md-4 col-form-label">Địa chỉ Email</label>
+                        <div class="col-sm-12 col-md-8">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <input type="email" name="email" class="form-control" ng-model="$.student.email">
+                            </div>
+                            <span class="text-danger" ng-model="$.student.email" ng-messages="formRegister.email.$error" ng-show="formRegister.email.$dirty">
+                                    <span ng-message="required">Vui lòng nhập Email</span>
+                                    <span ng-message="email">Email nhập vào không hợp lệ</span>
+                                </span>
+                        </div>
+                    </div>
 
-                <!-- Mật khẩu -->
-                <div class="form-group row">
-                    <label class="col-sm-12 col-md-4 col-form-label">Mật khẩu</label>
-                    <div class="col-sm-12 col-md-8">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                    <!-- Họ tên -->
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-md-4 col-form-label">Họ tên</label>
+                        <div class="col-sm-12 col-md-8">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-signature"></i></span>
+                                </div>
+                                <input type="text" class="form-control" name="fullname" ng-model="$.student.fullName" required
+                                    minlength="6" pattern="^[a-zA-Z0-9\s]{1,}$">
                             </div>
-                            <input type="password" class="form-control" placeholder="">
+                            <span class="text-danger" ng-model="$.student.fullName" ng-messages="formRegister.fullname.$error" ng-show="formRegister.fullname.$dirty">
+                                <span ng-message="required">Vui lòng nhập họ tên</span>
+                                <span ng-message="pattern">Họ tên chứa ký tự không hợp lệ</span>
+                                <span ng-message="minlength">Họ tên nhập vào quá ngắn</span>
+                            </span>
                         </div>
                     </div>
-                </div>
 
-                <!-- Nhập lại mật khẩu -->
-                <div class="form-group row">
-                    <label class="col-sm-12 col-md-4 col-form-label">Xác nhận mật khẩu</label>
-                    <div class="col-sm-12 col-md-8">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                    <!-- Giới tính -->
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-md-4 col-form-label">Giới tính</label>
+                        <div class="col-sm-12 col-md-8">
+                            <div class="input-group pt-1">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" ng-model="$.student.gender" name="gender" id="male" ng-value="true" checked>
+                                    <label class="form-check-label" for="male">Nam</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" ng-model="$.student.gender" name="gender" id="female" ng-value="false">
+                                    <label class="form-check-label" for="female">Nữ</label>
+                                </div>
                             </div>
-                            <input type="password" class="form-control" placeholder="">
                         </div>
                     </div>
-                </div>
-                <!-- Số điện thoại -->
-                <div class="form-group row">
-                    <label class="col-sm-12 col-md-4 col-form-label">Số điện thoại</label>
-                    <div class="col-sm-12 col-md-8">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone"></i></span>
+                    
+                    <!-- Mật khẩu -->
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-md-4 col-form-label">Mật khẩu</label>
+                        <div class="col-sm-12 col-md-8">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                </div>
+                                <input type="password" class="form-control" name="password" ng-model="$.student.password" required
+                                    minlength="6" pattern="^[a-zA-Z0-9\s]{1,}$">
                             </div>
-                            <input type="text" class="form-control" placeholder="">
+                            <span class="text-danger" ng-model="$.student.password" ng-messages="formRegister.password.$error" ng-model="$.student.password" ng-show="formRegister.password.$dirty">
+                                <span ng-message="required">Vui lòng nhập mật khẩu</span>
+                                <span ng-message="pattern">Mật khẩu có chứa ký tự không hợp lệ</span>
+                                <span ng-message="minlength">Mật khẩu nhập vào quá ngắn</span>
+                            </span>
                         </div>
                     </div>
-                </div>
-                <!-- Email -->
-                <div class="form-group row">
-                    <label class="col-sm-12 col-md-4 col-form-label">Địa chỉ Email</label>
-                    <div class="col-sm-12 col-md-8">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
-                            </div>
-                            <input type="email" class="form-control" placeholder="">
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Nút Đăng Ký -->
-                <div class="form-group row">
-                    <label class="col-sm-12 col-md-4 col-form-label"></label>
-                    <div class="col-sm-12 col-md-8">
-                        <button name="btnRegister" class="btn btn-success w-100">Đăng Ký</button>
+                    <!-- Nhập lại mật khẩu -->
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-md-4 col-form-label">Xác nhận mật khẩu</label>
+                        <div class="col-sm-12 col-md-8">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+                                </div>
+                                <input type="password" class="form-control" name="rePassword" ng-model="$.rePassword"
+                                    required minlength="6" pattern="^[a-zA-Z0-9\s]{1,}$">
+                            </div>
+                            <span class="text-danger" ng-messages="formRegister.rePassword.$error" ng-show="formRegister.rePassword.$dirty">
+                                <span ng-message="required">Vui lòng nhập mật khẩu xác nhận</span>
+                                <span ng-message="pattern">Mật khẩu xác nhận có chứa ký tự không hợp lệ</span>
+                                <span ng-message="minlength">Mật khẩu xác nhận nhập vào quá ngắn</span>
+                            </span>
+                        </div>
                     </div>
-                </div>
+
+                    <!-- Nút Đăng Ký -->
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-md-4 col-form-label"></label>
+                        <div class="col-sm-12 col-md-8">
+                            <button type="submit" name="btnRegister" class="btn btn-success w-100" ng-disabled="formRegister.$invalid" >Đăng Ký</button>
+                        </div>
+                    </div>
+                </form>
 
                 <!-- Link Đăng nhập-->
                 <div class="form-group row">

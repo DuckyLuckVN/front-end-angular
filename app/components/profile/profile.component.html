@@ -1,0 +1,88 @@
+<div class="row mt-5">
+    <!-- Ảnh bìa -->
+    <div class="col-sm-12 col-md-6">
+        <img style="max-width: 600px;" src="./resources/img/profile.png">
+    </div>
+    <!-- Form đăng ký -->
+    <div class="col-sm-12 col-md-6 animated slideInUp">
+        <div class="card shadow mt-5 card-profile">
+            <div class="card-img-circle">
+                <img onerror="this.src='/resources/img/default-avatar.jpg'" ng-src="/resources/img/students/{{$root.student.username}}.jpg">
+            </div>
+            <div class="card-header font-babloo d-flex justify-content-between">
+                <a class="btn btn-info ml-auto" ui-sref="change-profile">Thay đổi</a>
+            </div>
+            <div class="card-body">
+                <!-- Tài khoản -->
+                <div class="form-group row">
+                    <label class="col-sm-12 col-md-4 col-form-label">Tài khoản</label>
+                    <div class="col-sm-12 col-md-8">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
+                            </div>
+                            <input type="text" class="form-control" readonly ng-model="$root.student.username">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tài khoản -->
+                <div class=" form-group row">
+                    <label class="col-sm-12 col-md-4 col-form-label">Mật khẩu</label>
+                    <div class="col-sm-12 col-md-8">
+                        <button class="btn btn-outline-danger w-100" ui-sref="change-password">Đổi mật khẩu</button>
+                    </div>
+                </div>
+
+                <!-- Họ tên -->
+                <div class=" form-group row">
+                    <label class="col-sm-12 col-md-4 col-form-label">Họ tên</label>
+                    <div class="col-sm-12 col-md-8">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
+                            </div>
+                            <input type="text" class="form-control" readonly ng-model="$root.student.fullName">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class=" form-group row">
+                    <label class="col-sm-12 col-md-4 col-form-label">Địa chỉ Email</label>
+                    <div class="col-sm-12 col-md-8">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
+                            </div>
+                            <input type="text" class="form-control" readonly ng-model="$root.student.email">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Giới tính -->
+                <div class="form-group row">
+                    <label class="col-sm-12 col-md-4 col-form-label">Giới tính</label>
+                    <div class="col-sm-12 col-md-8">
+                        <div class="input-group pt-1">
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="male"
+                                    ng-checked="$root.student.gender == true" ng-value="true">
+                                <label class="form-check-label" for="male">Nam</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="female"
+                                 ng-checked="$root.student.gender == false" ng-value="false">
+                                <label class="form-check-label" for="female">Nữ</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>

@@ -7,8 +7,11 @@ export const subjectCard = {
     }
 }
 
-function controller($location) {
-    this.path = $location.path();
+function controller($state, $rootScope) {
 
+    this.goToQuizPage = () => {
+        $rootScope.quizSubject = this.subject;
+        $state.go('quiz-page');
+    }
    
 }

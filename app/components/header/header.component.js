@@ -1,13 +1,18 @@
+import {alertHelper} from '../../modules/helper/alert.helper.js'
 export const header = {
     templateUrl: './app/components/header/header.component.html',
     controller: controller,
     controllerAs: '$',
 }
 
-function controller($location) {
-    this.path = $location.path();
+function controller($state, $rootScope) {
 
     this.title = "HERO STUDY ONLINE";
+
+    this.logout = () => {
+        $rootScope.student = null;
+        alertHelper.simpleSuccess('Đăng xuất thành công', '', function () { $state.go('login') });
+    }
 
     this.menu = [
         {

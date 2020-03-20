@@ -1,3 +1,5 @@
+import {subjects} from '../../../database/subjects.js'
+
 export const courses = {
     templateUrl: './app/components/courses/courses.component.html',
     controller: controller,
@@ -5,49 +7,34 @@ export const courses = {
 }
 
 function controller($location) {
-    this.path = $location.path();
+    this.courses = subjects;
+    console.log(this.subjects)
 
-    this.courses = [ 
-        {
-            title: 'Lập trình game cơ bản',
-            logo: 'GAME.png'
-        },
-        {
-            title: 'Lậpn trình Android cơ bản',
-            logo: 'ADBS.png'
-        },
-        {
-            title: 'Lập trình Android nâng cao',
-            logo: 'ADAV.png'
-        },
-        {
-            title: 'Tạo giao diện Android',
-            logo: 'ADUI.png'
-        },
-        {
-            title: 'Kiểm thử Android',
-            logo: 'ADTE.png'
-        },
-        {
-            title: 'Lập trình ASP.NET',
-            logo: 'ASNE.png'
-        },
-        {
-            title: 'Hướng dẫn dùng cloud',
-            logo: 'CLCO.png'
-        },
-        {
-            title: 'Cơ bản CSDL',
-            logo: 'DBBS.png'
-        },
-        {
-            title: 'CSDL Nâng Cao',
-            logo: 'DBAV.png'
-        },
-        {
-            title: 'Lập Trình Web cơ bản',
-            logo: 'HTCS.png'
-        },
-    ]
+    this.index = 0;
+
+    this.first = () => {
+        this.index = 0;
+    }
+
+    this.prevert = () => {
+        this.index -= (this.index < 6) ? this.index + 1 : 6;
+        if (this.index < 6) {
+            this.index = 0;
+        } else {
+            this.index -= 6;
+        }
+    }
+    
+    this.next = () => {
+        if ( (this.index + 6) > this.courses - 1) {
+            this.last();
+        } else {
+            this.index += 6;
+        }
+    }
+
+    this.last = () => {
+        this.index = Math.round(this.courses.length / 6) * 6;
+    }
    
 }

@@ -1,5 +1,4 @@
-{
-    "subjects": [
+export let subjects = [
         {
             "id": "ADBS",
             "name": "Lập trình Android cơ bản",
@@ -121,4 +120,3 @@
             "numberOfLearners": 748456
         }
     ]
-}

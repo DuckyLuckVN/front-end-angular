@@ -1,6 +1,6 @@
 import {app} from './app.module.js';
 
-app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
+app.config(($stateProvider, $locationProvider, $urlRouterProvider ) => {
     $locationProvider.hashPrefix('');
 
     $urlRouterProvider.otherwise('/');
@@ -12,9 +12,12 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
         { name: 'contact', url: '/contact', component: 'contact' },
         { name: 'faq', url: '/faq', component: 'faq' },
         { name: 'register', url: '/register', component: 'register' },
-        { name: 'login', url: '/login', component: 'login' },
-        { name: 'change-password', url: '/change-password', component: 'changePassword' },
-        { name: 'change-profile', url: '/change-profile', component: 'changeProfile' },
+        { name: 'login', url: '/login', component: 'login',  data: {blockWhenAuth: true} },
+        { name: 'profile', url: '/profile', component: 'profile', data: {requireAuth: true} },
+        { name: 'change-password', url: '/change-password', component: 'changePassword',  data: {requireAuth: true} },
+        { name: 'change-profile', url: '/change-profile', component: 'changeProfile',  data: {requireAuth: true} },
+        { name: 'quiz-page', url: '/quiz-page', component: 'quizPage',  data: {requireAuth: true} },
+        { name: 'forgetPassword', url: '/forget-password', component: 'forgetPassword',  },
     ];
 
     routes.forEach(route => $stateProvider.state(route));

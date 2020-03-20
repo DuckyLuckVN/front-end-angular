@@ -32,17 +32,17 @@
       <form class="form-inline my-2 my-lg-0">
           <span class="nav-item dropdown">
               <a class="nav-link dropdown-toggle pr-3" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Tài khoản
+                  <span ng-show="$root.student == null">Tài khoản</span>
+                  <span ng-hide="$root.student == null">{{$root.student.username}}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="profile-detail.html">Thông tin chi tiết</a>
-                  <a class="dropdown-item" ui-sref="change-profile" ui-sref-active="active">Đổi thông tin</a>
-                  <a class="dropdown-item" ui-sref="change-password" ui-sref-active="active">Đổi mật khẩu</a>
-                  <div class="dropdown-divider"></div> 
-                  <a class="dropdown-item" ui-sref="login" ui-sref-active="active">Đăng nhập</a>
-                  <a class="dropdown-item" ui-sref="register" ui-sref-active="active">Đăng Ký</a>
-                  <div class="dropdown-divider"></div> 
-                  <a class="dropdown-item" href="logout.html">Đăng xuất</a>
+                  <a class="dropdown-item" ng-show="$root.student != null" ui-sref="profile" ui-sref-active="active">Thông tin chi tiết</a>
+                  <a class="dropdown-item" ng-show="$root.student != null" ui-sref="change-profile" ui-sref-active="active">Đổi thông tin</a>
+                  <a class="dropdown-item" ng-show="$root.student != null" ui-sref="change-password" ui-sref-active="active">Đổi mật khẩu</a>
+                  <div class="dropdown-divider" ng-show="$root.student != null"></div> 
+                  <a class="dropdown-item" ng-show="$root.student == null" ui-sref="login" ui-sref-active="active">Đăng nhập</a>
+                  <a class="dropdown-item" ng-show="$root.student == null" ui-sref="register" ui-sref-active="active">Đăng Ký</a>
+                  <a class="dropdown-item" href="" ng-show="$root.student != null" ng-click="$.logout()">Đăng xuất</a>
                 </div>
             </span>
       </form>

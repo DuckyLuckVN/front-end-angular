@@ -1,0 +1,95 @@
+<div class="row">
+    <!-- Hình ảnh củam ôn học -->
+    <div class="col-sm-12 col-md-3 mt-5 animated slideInUp">
+        <div class="quiz-logo ml-lg-auto mx-sm-auto">
+            <img onerror="this.src='../../../resources/img/logos/ASNE.png'" src="../../../resources/img/logos/{{$root.quizSubject.id}}.png" />
+        </div>
+        <div class="quiz-timer mt-3"><i class="far fa-clock"></i> {{$.getTimeStr($.second)}}</div>
+        <button class="quiz-submit btn mt-3" ng-show="$.isEndQuiz == false" ng-click="$.submitQuiz()">Kết Thúc</button>
+        <button class="quiz-restart btn mt-3" ng-show="$.isEndQuiz" ng-click="$.restartQuiz()">Làm lại</button>
+    </div>
+    <div class="col-sm-12 col-md-9">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 animated bounceInRight">
+                <!-- Tiêu đề quiz và thời gian làm bài -->
+                <div class="quiz-header">
+                    <div class="quiz-title">
+                        Lập trình Android nâng cao
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <!-- Nơi hiển thị câu hỏi và 4 câu trả lời -->
+                <div class="card card-quiz">
+                    <div class="card-header">
+                        <div class="index-of-quiz">
+                            {{$.index+1}} / {{$.quizs.length}}
+                        </div>
+                    </div>
+                    <div class="card-body animated fadeIn slow">
+                        <div class="quiz-question">{{$.quiz.Text}}</div>
+                        <div class="quiz-answers">
+                            <div class="answer form-check mb-2" ng-repeat="answer in $.quiz.Answers">
+                                <input id="{{answer.Id}}" 
+                                        class="form-check-input" 
+                                        ng-disabled="$.isEndQuiz" 
+                                        name="answer" ng-checked="$.quizAnswers[$.index].answerId == answer.Id" 
+                                        ng-click="$.selectAnswer(answer.Id)" 
+                                        type="radio" 
+                                        ng-value="answer" />
+
+                                <label for="{{answer.Id}}" 
+                                    class="form-check-label" 
+                                    ng-class="{correct: $.isEndQuiz && $.quiz.AnswerId == answer.Id && $.quizAnswers[$.index].answerId != null,
+                                                wrong: $.isEndQuiz && ( $.quizAnswers[$.index].answerId == answer.Id && !$.quizAnswers[$.index].isCorrect() ) }">
+                                    {{answer.Text}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <!-- Nút chuyển câu hỏi -->
+                        <nav class="quiz-controll">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void()" ng-click="$.firstQuiz()">
+                                        <i class="fas fa-angle-double-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void()" ng-click="$.revertQuiz()">
+                                            <i class="fas fa-angle-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void()" ng-click="$.nextQuiz()">
+                                            <i class="fas fa-angle-right"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void()" ng-click="$.lastQuiz()">
+                                            <i class="fas fa-angle-double-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                </div>
+            </div>
+            <div class="col-sm-12 mt-3">
+                <!-- Hiển thị các số câu hỏi -->
+                <div class="quiz-questions">
+                    <li ng-class="{
+                                active: an.isChecked(), 
+                                selected: an.quiz.Id == $.quiz.Id, 
+                                wrong: $.isEndQuiz && (an.isChecked() && !an.isCorrect()) ,
+                                correct: $.isEndQuiz && an.isCorrect() }" 
+                        ng-click="$.selectQuiz($index)"
+                        ng-repeat="an in $.quizAnswers"
+                        >{{($index + 1)}}</li>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 mt-3"></div>
+</div>

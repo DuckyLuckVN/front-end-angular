@@ -1,5 +1,59 @@
+<div class="mx-auto text-center">
+  <!-- Nút chuyển câu hỏi -->
+  <nav class="quiz-controll my-5">
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" href="javascript:void()" ng-click="$.first()">
+                <i class="fas fa-angle-double-left"></i>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="javascript:void()" ng-click="$.prevert()">
+                    <i class="fas fa-angle-left"></i>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="javascript:void()" ng-click="$.next()">
+                    <i class="fas fa-angle-right"></i>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="javascript:void()" ng-click="$.last()">
+                    <i class="fas fa-angle-double-right"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+</div>
 <div class="row mt-3">
-  <div class="col-sm-12 col-md-6 col-lg-4 mb-4"  ng-repeat="subject in $.courses">
+  <div class="col-sm-12 col-md-6 col-lg-4 mb-4"  ng-repeat="subject in $.courses | limitTo:6:$.index">
       <subject-card subject="subject" ></subject-card>
+  </div>
+  <div class="mx-auto">
+    <!-- Nút chuyển câu hỏi -->
+    <nav class="quiz-controll my-5">
+      <ul class="pagination">
+          <li class="page-item">
+              <a class="page-link" href="javascript:void()" ng-click="$.first()">
+                  <i class="fas fa-angle-double-left"></i>
+              </a>
+          </li>
+          <li class="page-item">
+              <a class="page-link" href="javascript:void()" ng-click="$.prevert()">
+                      <i class="fas fa-angle-left"></i>
+              </a>
+          </li>
+          <li class="page-item">
+              <a class="page-link" href="javascript:void()" ng-click="$.next()">
+                      <i class="fas fa-angle-right"></i>
+              </a>
+          </li>
+          <li class="page-item">
+              <a class="page-link" href="javascript:void()" ng-click="$.last()">
+                      <i class="fas fa-angle-double-right"></i>
+              </a>
+          </li>
+      </ul>
+  </nav>
   </div>
 </div>

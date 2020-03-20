@@ -4,7 +4,9 @@ export const faq = {
     controllerAs: '$',
 }
 
-function controller() {
+function controller($rootScope) {
+    this.haha = $rootScope.rootScope;
+
     this.faqs = [ 
         {
             question: 'Tôi không nhận được thông báo qua email.',
